@@ -1,8 +1,8 @@
 package com.example.myapplication
 
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
+// ... other imports ...
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.*
@@ -42,6 +42,15 @@ class MainActivity : ComponentActivity() {
                         startActivity(intent)
                     }) {
                         Text(text = "Start Activity Implicitly")
+                    }
+                    Spacer(modifier = Modifier.height(10.dp))
+                    // **NEW BUTTON ADDED**
+                    Button(onClick = {
+                        // explicit intent to third activity
+                        val intent = Intent(this@MainActivity, ThirdActivity::class.java)
+                        startActivity(intent)
+                    }) {
+                        Text(text = "View Image Activity")
                     }
                 }
             }
